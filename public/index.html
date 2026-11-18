@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>合作装配 · 控制权同步</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="importmap">
+    { "imports": { "three": "/vendor-three/three.module.js" } }
+  </script>
+</head>
+<body>
+  <div id="layout">
+    <div id="stage">
+      <canvas id="canvas"></canvas>
+      <div id="hud">
+        <div id="identity">连接中…</div>
+        <div id="hint">
+          按住部件 = 抓取手势（需服务器获准）· 拖动 = 移动 · R = 旋转 · 松开 = 释放 ·
+          <label><input type="checkbox" id="resetOnRelease" /> 释放时重置速度</label>
+        </div>
+      </div>
+    </div>
+    <aside id="panel">
+      <section>
+        <h2>当前归属（权威）</h2>
+        <div id="ownership"></div>
+      </section>
+      <section>
+        <h2>各次请求</h2>
+        <div id="counters" class="muted"></div>
+        <div id="log"></div>
+      </section>
+    </aside>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
