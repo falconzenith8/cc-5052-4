@@ -16,15 +16,31 @@
       <div id="hud">
         <div id="identity">连接中…</div>
         <div id="hint">
-          按住部件 = 抓取手势（需服务器获准）· 拖动 = 移动 · R = 旋转 · 松开 = 释放 ·
+          按住部件 = 抓取手势（需服务器裁决）· 拖动 = 移动 · R = 旋转 · L = 锁定入槽 · 松开 = 释放 ·
           <label><input type="checkbox" id="resetOnRelease" /> 释放时重置速度</label>
+          <br />
+          <button id="lockBtn">锁定入槽</button>
+          <button id="pressBtn">按住压紧装配按钮</button>
+          <span class="sep"></span>
+          <button id="armDelay">延放下一条</button>
+          <input id="delayMs" type="number" value="1500" min="0" step="100" /> ms
+          <label><input type="checkbox" id="dropNext" /> 改为丢弃</label>
+          <span id="delayState" class="armed"></span>
         </div>
       </div>
     </div>
     <aside id="panel">
       <section>
-        <h2>当前归属（权威）</h2>
+        <h2>当前归属（权威）· 策略 <span id="strategyBadge" class="badge"></span></h2>
         <div id="ownership"></div>
+      </section>
+      <section>
+        <h2>交接</h2>
+        <div id="handover"></div>
+      </section>
+      <section>
+        <h2>实验指标（双持 / 失控空档）</h2>
+        <div id="metrics"></div>
       </section>
       <section>
         <h2>各次请求</h2>

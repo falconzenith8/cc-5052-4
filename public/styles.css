@@ -23,3 +23,16 @@ h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #
 .entry .t { color: #7d8da3; margin-right: 6px; }
 .muted { color: #8496ad; font-size: 12px; margin-bottom: 8px; }
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+#hint button { pointer-events: auto; background: #2a3547; color: #d7dde6; border: 1px solid #3a475c; border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+#hint button:hover { background: #34425a; }
+#hint input[type="number"] { pointer-events: auto; width: 64px; background: #10141b; color: #d7dde6; border: 1px solid #3a475c; border-radius: 6px; padding: 2px 6px; }
+#hint .sep { display: inline-block; width: 12px; }
+#delayState.armed { color: #f2c14e; margin-left: 6px; }
+#handover .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 4px 0; font-size: 13px; }
+#handover button { background: #2f4a38; color: #7ee2a8; border: 1px solid #3f6350; border-radius: 6px; padding: 3px 10px; cursor: pointer; }
+#handover button:hover { background: #3a5a46; }
+.card .row.warn { color: #f2c14e; font-size: 12px; }
+.badge.locked { background: #2f4a38; color: #7ee2a8; }
+.bar { display: inline-block; width: 90px; height: 8px; background: #10141b; border: 1px solid #2a3547; border-radius: 999px; overflow: hidden; vertical-align: middle; }
+.bar .fill { display: block; height: 100%; background: #6ea8fe; }
+#metrics .row { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; margin: 3px 0; }

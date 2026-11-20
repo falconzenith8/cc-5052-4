@@ -1,0 +1,32 @@
+{
+  "default": "confirm",
+  "reason": "确认消息丢失时，双方确认策略让原持有人继续保有部件：重连后补发的最后一次旋转仍然生效，桌面操作不中断（空档仅覆盖真实断线窗口）。租约策略在同一故障下把部件判给不知情的租约人，旧持有人的迟到旋转被拒（stale-epoch），部件在租约期内无人可操作，直到到期回收。使租约失效的重放见 lab/replays/handover-lease.json。",
+  "results": {
+    "confirm": {
+      "dualHoldMs": 0,
+      "controlGapMs": 370,
+      "resentRotationRejected": false,
+      "pressedBy": "u1",
+      "lockedBy": "u1",
+      "finalQuaternion": [
+        0,
+        0.7933533402890679,
+        0,
+        0.6087614290115452
+      ]
+    },
+    "lease": {
+      "dualHoldMs": 0,
+      "controlGapMs": 868,
+      "resentRotationRejected": true,
+      "pressedBy": "u2",
+      "lockedBy": "u2",
+      "finalQuaternion": [
+        0.3826831399164457,
+        8.249474053852829e-7,
+        0,
+        0.9238796536470588
+      ]
+    }
+  }
+}

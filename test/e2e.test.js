@@ -67,14 +67,15 @@ test('端到端：同时抓取只有一人获准，输家移动被拒且两客�
   await Promise.all([u1.waitForType(MSG.HELLO), u2.waitForType(MSG.HELLO)]);
   await Promise.all([u1.waitForType(MSG.SNAPSHOT), u2.waitForType(MSG.SNAPSHOT)]);
 
-  // Competing requests for the SAME entity, back to back.
+  // Competing requests for the SAME entity, back to back. Under the default
+  // confirm strategy the loser's grab becomes a pending handover request.
   u1.send({ type: MSG.GRAB, entityId: PART });
   u2.send({ type: MSG.GRAB, entityId: PART });
   const r1 = await u1.waitFor((m) => m.type === MSG.GRAB_RESULT);
   const r2 = await u2.waitFor((m) => m.type === MSG.GRAB_RESULT);
   assert.equal(r1.ok, true);
   assert.equal(r2.ok, false);
-  assert.equal(r2.reason, REASON.HELD_BY_OTHER);
+  assert.equal(r2.reason, REASON.HANDOVER_PENDING);
   const epoch = r1.epoch;
 
   // Both clients observe the same holder and the same epoch via broadcasts.
@@ -201,7 +202,7 @@ test('端到端：释放声明 reset 后物体静止，不会凭空出现动量'
 });
 
 test('端到端：持有者断线后部件被自动释放（带 reset），另一用户可立即接手', async () => {
-  const server = createServer({ port: 0 });
+  const server = createServer({ port: 0, disconnectGraceMs: 50 });
   await new Promise((r) => server.listen(0, r));
   const port = server.address().port;
 
@@ -261,6 +262,70 @@ test('端到端：连续 20 次快速换手，控制权始终唯一且 epoch 连
   // Any accepted stale -5 target would have pulled it far below the start,
   // so the position must never have moved meaningfully negative.
   assert.ok(part.position[0] >= -1.7, `unexpected stale jump: x=${part.position[0]}`);
+
+  u1.close();
+  u2.close();
+  await server.stop();
+});
+
+test('端到端：确认交接走完全程——请求、确认、转移、迟到者按步骤被拒', async () => {
+  const server = createServer({ port: 0 });
+  await new Promise((r) => server.listen(0, r));
+  const port = server.address().port;
+
+  const u1 = wsClient(port);
+  const u2 = wsClient(port);
+  await Promise.all([u1.waitForType(MSG.HELLO), u2.waitForType(MSG.HELLO)]);
+
+  u1.send({ type: MSG.GRAB, entityId: PART });
+  const g1 = await u1.waitFor((m) => m.type === MSG.GRAB_RESULT && m.ok);
+
+  // u2's contended grab becomes a pending handover request.
+  u2.send({ type: MSG.GRAB, entityId: PART });
+  const pending = await u2.waitFor((m) => m.type === MSG.GRAB_RESULT);
+  assert.equal(pending.ok, false);
+  assert.equal(pending.reason, REASON.HANDOVER_PENDING);
+  assert.ok(pending.requestId);
+
+  // The holder sees the pending request broadcast and confirms it.
+  await u1.waitFor((m) => m.type === MSG.HANDOVER_STATE && m.parts[PART]?.pending);
+  u1.send({ type: MSG.HANDOVER_CONFIRM, entityId: PART, requestId: pending.requestId });
+  const confirmed = await u1.waitFor((m) => m.type === MSG.HANDOVER_RESULT && m.ok);
+  assert.equal(confirmed.epoch, g1.epoch + 1);
+  const granted = await u2.waitFor((m) => m.type === MSG.HANDOVER_RESULT && m.ok);
+  assert.equal(granted.epoch, g1.epoch + 1);
+
+  // Both clients converge on the new holder.
+  await u2.waitFor((m) => m.type === MSG.SNAPSHOT && m.parts.find((p) => p.id === PART).holder === 'u2');
+
+  // The old holder's late rotation names the step that did not take effect.
+  u1.send({ type: MSG.MOVE, entityId: PART, epoch: g1.epoch, kind: 'rotate', position: [4, 4, 4], quaternion: ID_Q });
+  const stale = await u1.waitForType(MSG.MOVE_REJECTED);
+  assert.equal(stale.reason, REASON.STALE_EPOCH);
+  assert.equal(stale.step, 'rotate');
+
+  // The new holder drives to the slot, bottoms the assembly button, locks in.
+  u2.send({ type: MSG.MOVE, entityId: PART, epoch: granted.epoch, position: [-0.8, 1.2, -0.2], quaternion: ID_Q });
+  // Wait until the authoritative position is actually at the slot.
+  await u2.waitFor((m) => {
+    if (m.type !== MSG.SNAPSHOT) return false;
+    const p = m.parts.find((x) => x.id === PART);
+    return Math.hypot(p.position[0] + 0.8, p.position[1] - 1.2, p.position[2] + 0.2) < 0.3;
+  });
+  for (let i = 0; i < 6; i++) {
+    u2.send({ type: MSG.PRESS, entityId: PART, epoch: granted.epoch, delta: 0.25 });
+    await new Promise((r) => setTimeout(r, 60));
+  }
+  await u2.waitFor((m) => m.type === MSG.SNAPSHOT && m.parts.find((p) => p.id === PART).button.pressedBy === 'u2');
+  u2.send({ type: MSG.SLOT_LOCK, entityId: PART, epoch: granted.epoch });
+  const locked = await u2.waitFor((m) => m.type === MSG.SLOT_RESULT);
+  assert.equal(locked.ok, true);
+
+  // The latecomer's slot lock is rejected with its step named.
+  u1.send({ type: MSG.SLOT_LOCK, entityId: PART, epoch: g1.epoch });
+  const lateLock = await u1.waitFor((m) => m.type === MSG.SLOT_RESULT);
+  assert.equal(lateLock.ok, false);
+  assert.equal(lateLock.step, 'slot-lock');
 
   u1.close();
   u2.close();

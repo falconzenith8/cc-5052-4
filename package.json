@@ -6,7 +6,8 @@
   "main": "src/server/index.js",
   "scripts": {
     "start": "node src/server/index.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test --test-concurrency=1 test/*.test.js",
+    "lab": "node lab/run-experiment.js"
   },
   "repository": {
     "type": "git",

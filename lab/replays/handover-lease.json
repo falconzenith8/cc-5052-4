@@ -1,0 +1,1150 @@
+{
+  "strategy": "lease",
+  "serverOptions": {
+    "strategy": "lease",
+    "confirmTtlMs": 1000,
+    "leaseTtlMs": 800,
+    "disconnectGraceMs": 2500,
+    "metricsIntervalMs": 100
+  },
+  "expectations": {
+    "resentRotationRejected": true,
+    "ambiguityPressRejected": "stale-epoch",
+    "pressedBy": "u2",
+    "lockedBy": "u2",
+    "lockOk": true,
+    "finalQuaternion": [
+      0.3826831399164457,
+      8.249474053852829e-7,
+      0,
+      0.9238796536470588
+    ],
+    "controlGapMs": 868,
+    "dualHoldMs": 0
+  },
+  "trace": [
+    {
+      "t": 5,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "hello"
+    },
+    {
+      "t": 5,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 5,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 7,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "hello"
+    },
+    {
+      "t": 7,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 7,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 7,
+      "actor": "u1",
+      "kind": "send",
+      "type": "grab"
+    },
+    {
+      "t": 7,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 7,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "grab-result",
+      "ok": true
+    },
+    {
+      "t": 7,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 7,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 7,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 52,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 53,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 68,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 104,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 104,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 104,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 104,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 129,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 155,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 155,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 194,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 207,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 207,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 207,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 207,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 255,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 256,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 256,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 306,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 306,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 306,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 306,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 318,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 357,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 357,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 407,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 407,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 407,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 407,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 457,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 457,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 512,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 512,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 512,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 512,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 533,
+      "actor": "u2",
+      "kind": "send",
+      "type": "grab"
+    },
+    {
+      "t": 533,
+      "actor": "u2",
+      "kind": "drop",
+      "what": "grab-result (lease grant lost)"
+    },
+    {
+      "t": 533,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "grab-result",
+      "ok": true
+    },
+    {
+      "t": 533,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control",
+      "reason": "lease-grant"
+    },
+    {
+      "t": 533,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 534,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control",
+      "reason": "lease-grant"
+    },
+    {
+      "t": 534,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 564,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 564,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 564,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 564,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": false,
+      "reason": "stale-epoch",
+      "step": "press"
+    },
+    {
+      "t": 564,
+      "actor": "u1",
+      "kind": "disconnect"
+    },
+    {
+      "t": 613,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 616,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 666,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 719,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 719,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 772,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 819,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 821,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 877,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 923,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 926,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 973,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "hello"
+    },
+    {
+      "t": 973,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 973,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 973,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 973,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 974,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "move-rejected",
+      "ok": false,
+      "reason": "stale-epoch",
+      "step": "rotate"
+    },
+    {
+      "t": 978,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 978,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1024,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1024,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1029,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1029,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1081,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1081,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1127,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1127,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1135,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1135,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1183,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1183,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1228,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1228,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1233,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1233,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1283,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1283,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1330,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1330,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1334,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control",
+      "reason": "lease-expired"
+    },
+    {
+      "t": 1334,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 1334,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1334,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control",
+      "reason": "lease-expired"
+    },
+    {
+      "t": 1334,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 1334,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1390,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1390,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1432,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1432,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1442,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1442,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1476,
+      "actor": "u2",
+      "kind": "send",
+      "type": "grab"
+    },
+    {
+      "t": 1477,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "grab-result",
+      "ok": true
+    },
+    {
+      "t": 1477,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1477,
+      "actor": "u2",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 1478,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1493,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1493,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1532,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1532,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1545,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1545,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1597,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1597,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1633,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1633,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1647,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1648,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1648,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1648,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1699,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1699,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1708,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1710,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1736,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1736,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1751,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1751,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1772,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1773,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1805,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1806,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1838,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1839,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1839,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1839,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1855,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1856,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1899,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1900,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1900,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1900,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1905,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1906,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1941,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1942,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1958,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1958,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1960,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1960,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 2013,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2013,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2022,
+      "actor": "u2",
+      "kind": "send",
+      "type": "slot-lock"
+    },
+    {
+      "t": 2023,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "slot-result",
+      "ok": true
+    },
+    {
+      "t": 2023,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 2024,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 2047,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2047,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2067,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2067,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2120,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2120,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2152,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2152,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2171,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2172,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2224,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2224,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2253,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2253,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2276,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2277,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2325,
+      "actor": "u1",
+      "kind": "disconnect"
+    },
+    {
+      "t": 2325,
+      "actor": "u2",
+      "kind": "disconnect"
+    }
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "strategy": "confirm",
+  "serverOptions": {
+    "strategy": "confirm",
+    "confirmTtlMs": 1000,
+    "leaseTtlMs": 800,
+    "disconnectGraceMs": 2500,
+    "metricsIntervalMs": 100
+  },
+  "expectations": {
+    "resentRotationRejected": false,
+    "ambiguityPressRejected": "not-holder",
+    "pressedBy": "u1",
+    "lockedBy": "u1",
+    "lockOk": true,
+    "finalQuaternion": [
+      0,
+      0.7933533402890679,
+      0,
+      0.6087614290115452
+    ],
+    "controlGapMs": 370,
+    "dualHoldMs": 0
+  },
+  "trace": [
+    {
+      "t": 10,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "hello"
+    },
+    {
+      "t": 11,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 11,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 12,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "hello"
+    },
+    {
+      "t": 12,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 12,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 12,
+      "actor": "u1",
+      "kind": "send",
+      "type": "grab"
+    },
+    {
+      "t": 12,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 12,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "grab-result",
+      "ok": true
+    },
+    {
+      "t": 12,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 12,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 12,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 56,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 56,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 73,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 103,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 103,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 106,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 106,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 136,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 159,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 159,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 197,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 204,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 204,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 209,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 209,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 258,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 260,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 260,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 304,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 304,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 311,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 311,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 319,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 362,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 362,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 406,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 406,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 413,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 413,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 464,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 464,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 506,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 506,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 515,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 516,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 533,
+      "actor": "u2",
+      "kind": "send",
+      "type": "grab"
+    },
+    {
+      "t": 534,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "grab-result",
+      "ok": false,
+      "reason": "handover-pending"
+    },
+    {
+      "t": 534,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 534,
+      "actor": "u1",
+      "kind": "drop",
+      "what": "handover-confirm (never sent)"
+    },
+    {
+      "t": 534,
+      "actor": "u2",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 535,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 535,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": false,
+      "reason": "not-holder",
+      "step": "press"
+    },
+    {
+      "t": 535,
+      "actor": "u1",
+      "kind": "disconnect"
+    },
+    {
+      "t": 569,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 606,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 619,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 675,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 707,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 729,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 780,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 811,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 831,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 883,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 912,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 935,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 939,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "hello"
+    },
+    {
+      "t": 939,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 939,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 939,
+      "actor": "u1",
+      "kind": "send",
+      "type": "move",
+      "step": "rotate"
+    },
+    {
+      "t": 939,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 987,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 988,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1017,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1018,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1039,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1039,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1093,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1093,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1119,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1119,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1145,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1145,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1198,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1199,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1223,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1223,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1252,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1252,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1303,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1303,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1324,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1324,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1358,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1358,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1413,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1413,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1427,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1427,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1465,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1465,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1521,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1522,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1528,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1529,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1574,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-result",
+      "ok": false,
+      "reason": "confirm-timeout"
+    },
+    {
+      "t": 1574,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 1574,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1575,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1575,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "handover-state"
+    },
+    {
+      "t": 1575,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1575,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1627,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1627,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1630,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1630,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1635,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1635,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1678,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1678,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1700,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1701,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1731,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1731,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1731,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1731,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1762,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1762,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1782,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1782,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1822,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1823,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1823,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1823,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1833,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1833,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1833,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1833,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1883,
+      "actor": "u1",
+      "kind": "send",
+      "type": "press"
+    },
+    {
+      "t": 1884,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1884,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1884,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "press-result",
+      "ok": true
+    },
+    {
+      "t": 1933,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1933,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 1934,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1934,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1946,
+      "actor": "u1",
+      "kind": "send",
+      "type": "slot-lock"
+    },
+    {
+      "t": 1949,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "slot-result",
+      "ok": true
+    },
+    {
+      "t": 1949,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1950,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "control"
+    },
+    {
+      "t": 1987,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 1987,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2039,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2039,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2039,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2039,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2094,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2094,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2142,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2142,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2145,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2145,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2197,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2198,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2247,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2247,
+      "actor": "u2",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2247,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "metrics"
+    },
+    {
+      "t": 2247,
+      "actor": "u1",
+      "kind": "recv",
+      "type": "snapshot"
+    },
+    {
+      "t": 2250,
+      "actor": "u1",
+      "kind": "disconnect"
+    },
+    {
+      "t": 2250,
+      "actor": "u2",
+      "kind": "disconnect"
+    }
+  ]
+}
